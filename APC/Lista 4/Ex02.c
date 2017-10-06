@@ -2,12 +2,16 @@
 
 int main()
 {
-  int numeros[200],aux;
-  for(aux=0;aux<200;aux++)
+  int numeros[300],aux=0;
+  scanf("%d",&numeros[aux]);
+  aux++;
+  while(aux<300 && numeros[aux-1]>0)
   {
     scanf("%d",&numeros[aux]);
+    aux++;
   }
-  for(aux=199;aux>=0;aux--)
+  aux = aux-2;
+  for(;aux>=0;aux--)
   {
     printf("%d ",numeros[aux]);
   }
