@@ -7,8 +7,8 @@ int main()
   int aux, letras1=0,letras2=0;
   char string1[100],string2[100];
 
-  scanf("%s",string1);
-  scanf("%s",string2);
+  scanf("%s\n%s",string1,string2);
+
   letras1 =strlen(string1);
   letras2 = strlen(string2);
   if(letras1>letras2)
@@ -33,6 +33,5 @@ int main()
       printf("%c",string2[aux]);
     }
   }
-  printf("\0\n");
   return 0;
 }
