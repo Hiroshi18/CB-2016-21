@@ -11,7 +11,6 @@ int main()
   scanf("%s",string2);
   letras1 =strlen(string1);
   letras2 = strlen(string2);
-
   if(letras1>letras2)
   {
     for(aux=0;aux<letras2;aux++)
@@ -34,6 +33,6 @@ int main()
       printf("%c",string2[aux]);
     }
   }
-
+  printf("\0\n");
   return 0;
 }
