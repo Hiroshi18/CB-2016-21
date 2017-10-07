@@ -26,6 +26,8 @@ int main()
     l=3;
     cruz = cruz + matriz[l][c];
   }
+  cruz = cruz - matriz[3][3];
+  
   //0
   for(l=0;l<3;l++)
   {
@@ -65,5 +67,6 @@ int main()
       soma = soma + quadrantes[aux];
   }
   printf("%d\n",soma);
+
   return 0;
 }
