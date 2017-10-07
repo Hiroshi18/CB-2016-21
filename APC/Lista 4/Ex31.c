@@ -1,72 +1,67 @@
 #include <stdio.h>
 #include <string.h>
-#define linha 7
-#define coluna 7
 
 int main()
 {
-  int l,c,aux;
-  int matriz[linha][coluna],soma=0,cruz=0,quadrantes[4]={0,0,0,0};
-  //le a matriz
-  for(l=0;l<linha;l++)
-  {
-    for(c=0;c<coluna;c++)
-    {
-      scanf("%d",&matriz[l][c]);
-    }
-  }
-  //calcula cruz
-  for(l=0;l<linha;l++)
-  {
-    c=3;
-    cruz= cruz + matriz[l][c];
-  }
-  for(c=0;c<coluna;c++)
-  {
-    l=3;
-    cruz = cruz + matriz[l][c];
-  }
-  cruz = cruz - matriz[3][3];
-  
-  //0
-  for(l=0;l<3;l++)
-  {
-    for(c=0;c<3;c++)
-    {
-      quadrantes[0] = quadrantes[0] + matriz[l][c];
-    }
-  }
-  //1
-  for(l=4;l<linha;l++)
-  {
-    for(c=4;c<coluna;c++)
-    {
-      quadrantes[1] = quadrantes[1] + matriz[l][c];
-    }
-  }
-  //2
-  for(l=4;l<linha;l++)
-  {
-    for(c=0;c<3;c++)
-    {
-      quadrantes[2] = quadrantes[2] + matriz[l][c];
-    }
-  }
-  //3
-  for(l=0;l<3;l++)
-  {
-    for(c=4;c<coluna;c++)
-    {
-      quadrantes[3] = quadrantes[3] + matriz[l][c];
-    }
-  }
-  //verifica soma e printa
-  for(aux=0;aux<4;aux++)
-  {
-    if(quadrantes[aux]>cruz)
-      soma = soma + quadrantes[aux];
-  }
-  printf("%d\n",soma);
+  int ordem,rotacao,soma=0,l,c;
 
+  scanf("%d",&ordem);
+
+  int matriz[ordem][ordem];
+
+  scanf("%d",&rotacao);
+
+  //le a matriz
+
+  switch(rotacao)
+  {
+    case 360:
+    for(l=0;l<ordem;l++)
+    {
+      for(c=0;c<ordem;c++)
+      {
+        scanf("%d",&matriz[l][c]);
+      }
+    }
+    break;
+
+    case 270:
+    for(c=(ordem-1);c>=0;c--)
+    {
+      for(l=0;l<ordem;l++)
+      {
+        scanf("%d",&matriz[l][c]);
+      }
+    }
+    break;
+
+    case 180:
+    for(l=(ordem-1);l>=0;l--)
+    {
+      for(c=(ordem-1);c>=0;c--)
+      {
+        scanf("%d",&matriz[l][c]);
+      }
+    }
+    break;
+
+    case 90:
+    for(c=0;c<ordem;c++)
+    {
+      for(l=(ordem-1);l>=0;l--)
+      {
+        scanf("%d",&matriz[l][c]);
+      }
+    }
+    break;
+  }
+  for(l=1;l<ordem;l=l+2)
+  {
+    for(c=0;c<ordem;c++)
+    {
+      soma = soma + matriz[l][c];
+    }
+  }
+  printf("%d",soma);
   return 0;
 }
