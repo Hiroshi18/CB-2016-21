@@ -16,11 +16,11 @@ int main()
 
   for(aux=0;aux<10;aux++)
   {
-      for(aux1=0;aux1<aux;aux1++)
+      for(aux1=(aux+1);aux1<aux;aux1++)
       {
-        if(x[aux]!=x[aux1] && x[aux]!=y[aux1])
+        if(x[aux]==x[aux1])
         {
-        
+          interseccao[aux] = 1;
         }
       }
   }
