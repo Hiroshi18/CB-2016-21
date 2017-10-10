@@ -4,34 +4,30 @@
 
 int main()
 {
-  int aux, letras1=0,letras2=0;
-  char string1[100],string2[100];
+  int letras1=0,letras2=0,i=0;
+  char string1[100],string2[100],letra='0';
 
-  scanf("%s\n%s",string1,string2);
+  while(letra != '\n') {
+    scanf("%c", &letra);
+    string1[i] = letra;
+    i++;
+  }
+  string1[i]='\0';
+  letra='0';
 
-  letras1 =strlen(string1);
-  letras2 = strlen(string2);
-  if(letras1>letras2)
-  {
-    for(aux=0;aux<letras2;aux++)
-    {
-      printf("%c%c",string1[aux],string2[aux]);
-    }
-    for(;aux<letras1;aux++)
-    {
-      printf("%c",string1[aux]);
-    }
+  while(letra != '\n') {
+    scanf("%c", &letra);
+    string2[i] = letra;
+    i++;
   }
-  else
+  string2[i]='\0';
+  i=0;
+
+  while(string1[i+1] != '\n')
   {
-    for(aux=0;aux<letras1;aux++)
-    {
-      printf("%c%c",string2[aux],string1[aux]);
-    }
-    for(;aux<letras2;aux++)
-    {
-      printf("%c",string2[aux]);
-    }
+    printf("%c%c", string1[i],string2[i]);
+    i++;
   }
+
   return 0;
 }
