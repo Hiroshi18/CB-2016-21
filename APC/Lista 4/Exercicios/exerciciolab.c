@@ -50,7 +50,7 @@ double fneuronio(double entrada[], double pesos[], double T)
     }
     for(j=0;j<10;j++)
     {
-        b+=a[i];
+        b+=a[j];
     }
 
     if(b>T)
